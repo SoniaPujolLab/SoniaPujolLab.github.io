@@ -1,0 +1,43 @@
+<app-navbar />
+<main id="main" class="page">
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero__title">Advancing<br /><span>Open Source Medical AI</span></h1>
+        </div>
+    </section>
+    <section class="container grid">
+        @for (project of projects; track project.title) {
+            <article class="feature" [style.--color]="project.color">
+                <span class="feature__icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path [attr.d]="project.icon" />
+                    </svg>
+                </span>
+                <h2 class="feature__title">{{ project.title }}</h2>
+                <p class="feature__text">{{ project.text }}</p>
+                <a class="btn-ghost" [href]="project.href">
+                    View Website
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </a>
+            </article>
+        }
+    </section>
+</main>
+<app-site-footer />
